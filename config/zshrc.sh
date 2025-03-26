@@ -59,5 +59,3 @@ if command -v ask-sh &> /dev/null; then
   export ASK_SH_OPENAI_MODEL=gpt-4o-mini
   eval "$(ask-sh --init)"
 fi
-
-cat $CONFIG_DIR/start.txt
