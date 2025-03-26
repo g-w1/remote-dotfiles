@@ -37,7 +37,6 @@ if [ -d "$HOME/.pyenv" ]; then
   eval "$(pyenv init -)"
 fi
 
-cp $CONFIG_DIR/helix.toml $HOME/.config/helix/config.toml
 
 if [ -d "$HOME/.local/bin/micromamba" ]; then
   export MAMBA_EXE="$HOME/.local/bin/micromamba"

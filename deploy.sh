@@ -12,6 +12,7 @@ END
 )
 
 export DOT_DIR=$(dirname $(realpath $0))
+export CONFIG_DIR=$DOT_DIR/config
 
 VIM="false"
 ALIASES=()
@@ -55,6 +56,9 @@ if [ -n "${ALIASES+x}" ]; then
         echo "source $DOT_DIR/config/aliases_${alias}.sh" >> $HOME/.zshrc
     done
 fi
+
+# Helix setup
+cp $CONFIG_DIR/helix.toml $HOME/.config/helix/config.toml
 
 echo "changing default shell to zsh"
 chsh -s $(which zsh)
