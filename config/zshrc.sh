@@ -18,6 +18,7 @@ source $CONFIG_DIR/aliases.sh
 source $CONFIG_DIR/p10k.zsh
 source $CONFIG_DIR/extras.sh
 source $CONFIG_DIR/key_bindings.sh
+export EDITOR="vim"
 add_to_path "${DOT_DIR}/custom_bins"
 
 # for uv
@@ -35,6 +36,8 @@ if [ -d "$HOME/.pyenv" ]; then
   command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
+
+cp $CONFIG_DIR/helix.toml $HOME/.config/helix/config.toml
 
 if [ -d "$HOME/.local/bin/micromamba" ]; then
   export MAMBA_EXE="$HOME/.local/bin/micromamba"
@@ -59,3 +62,9 @@ if command -v ask-sh &> /dev/null; then
   export ASK_SH_OPENAI_MODEL=gpt-4o-mini
   eval "$(ask-sh --init)"
 fi
+
+if command -v hx &> /dev/null; then
+  export EDITOR="hx"
+fi
+
+alias vim="$EDITOR"

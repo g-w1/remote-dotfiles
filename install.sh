@@ -53,6 +53,10 @@ if [ $machine == "Linux" ]; then
     [ $tmux == true ] && sudo apt-get install -y tmux
     sudo apt-get install -y less nano htop ncdu nvtop lsof rsync jq
     curl -LsSf https://astral.sh/uv/install.sh | sh
+
+    sudo add-apt-repository ppa:maveonair/helix-editor
+    sudo apt update
+    sudo apt install -y helix
     
     if [ $extras == true ]; then
         sudo apt-get install -y ripgrep

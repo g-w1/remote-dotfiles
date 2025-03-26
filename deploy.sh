@@ -44,8 +44,8 @@ fi
 
 # git setup
 # if you fork this, you should change git/email and git/name
-git config --global user.email `cat git/email`
-git config --global user.name `cat git/name`
+git config --global user.email "`cat git/email`"
+git config --global user.name "`cat git/name`"
 
 # zshrc setup
 echo "source $DOT_DIR/config/zshrc.sh" > $HOME/.zshrc
